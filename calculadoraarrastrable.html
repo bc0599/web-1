@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>Calculadora arrastrable</title>
+<script language="JavaScript1.2">
+    <!--
+     var ie=document.all
+     var ns6=document.getElementById&&!ie
+
+     var dragapproved=true
+     var z,x,y
+
+     function move(e)
+     {
+          if (dragapproved)
+          {
+               z.style.left=ns6? temp1+e.clientX-x: temp1+event.clientX-x
+               z.style.top=ns6? temp2+e.clientY-y : temp2+event.clientY-y
+               return false
+          }
+     }
+
+     function drags(e)
+     {
+          var firedobj=ns6? e.target : event.srcElement
+          var topelement=ns6? "HTML" : "BODY"
+
+          while (firedobj.tagName!=topelement&&firedobj.className!="drag")
+          {
+               firedobj=ns6? firedobj.parentNode : firedobj.parentElement
+          }
+
+          if (firedobj.className=="drag")
+          {
+               dragapproved=true
+               z=firedobj
+               temp1=parseInt(z.style.left+0)
+               temp2=parseInt(z.style.top+0)
+               x=ns6? e.clientX: event.clientX
+               y=ns6? e.clientY: event.clientY
+               document.onmousemove=move
+               return false
+          }
+     }
+
+     document.onmousedown=drags
+     document.onmouseup=new Function("dragapproved=false")
+    //-->
+   </script>
+<style type="text/css">.drag {
+
+	CURSOR: hand; POSITION: relative
+}
+</style>
+
+
+</head>
+
+<body bgColor="black">
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="blue" width="100%" id="AutoNumber1">
+  <tr>
+    <td width="33%"></td>
+    <td width="33%">
+
+<div class="drag" id="calc" style="width: 169; height: 176">
+
+  <form name="calculator">
+    <table borderColor="pink" cellSpacing="1" cellPadding="0" width="150" bgColor="pink" border="3">
+      <tr>
+        <td>
+        <input style="color:black; background:pink" size="19" name="ans" length="19">
+        </td>
+      </tr>
+    </table>
+
+    <table borderColor="pink" cellSpacing="2" cellPadding="2" width="150" bgColor="pink" border="3">
+      <tr>
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='7'" type="button" value="  7  " name="seven">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='8'" type="button" value="  8  " name="eight">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='9'" type="button" value="  9  " name="nine">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='/'" type="button" value="  /  " name="divide">
+        </td>
+
+      </tr>
+      <tr>
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='4'" type="button" value="  4  " name="four">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='5'" type="button" value="  5  " name="five">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='6'" type="button" value="  6  " name="six">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='*'" type="button" value="  *  " name="multiply">
+        </td>
+
+      </tr>
+      <tr>
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='1'" type="button" value="  1  " name="one">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='2'" type="button" value="  2  " name="two">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='3'" type="button" value="  3  " name="three">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='-'" type="button" value="  -  " name="subtract">
+        </td>
+
+      </tr>
+
+      <tr>
+        <td align="middle">
+        <input onclick="document.calculator.ans.value=''" type="button" value="  C  " name="clear">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='0'" type="button" value="  0  " name="zero">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value=eval(document.calculator.ans.value)" type="button" value="  =  " name="equal">
+        </td>
+
+        <td align="middle">
+        <input onclick="document.calculator.ans.value+='+'" type="button" value="  +  " name="add">
+        </td>
+
+      </tr>
+    </table>
+  </form>
+</div>
+
+
+  </tr>
+</table>
+
+</body>
+
+</html>
